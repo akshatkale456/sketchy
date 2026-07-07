@@ -79,6 +79,12 @@ importers:
         specifier: ^8.18.1
         version: 8.18.1
 
+  packages/DB:
+    dependencies:
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+
   packages/backend:
     devDependencies:
       '@repo/typescript-config':
