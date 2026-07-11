@@ -1,4 +1,5 @@
 import {z } from "zod"
+import type {Request} from
    export const signupschema = z.object({
      userName : z.string().min(2).max(8),
      password:z.string().min(2).max(6),
@@ -16,3 +17,4 @@ import {z } from "zod"
     
 
  })
+     

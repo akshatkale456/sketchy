@@ -1,10 +1,20 @@
 import { Request, Response } from 'express';
+import { Authrequest } from '../types/types';
 import jwt from 'jsonwebtoken'
+import { signinschema } from '@repo/common/types';
 const JWT_SECRET = "2211"
 
-export const signin = (req: Request, res: Response) => {
+export const signin = (req:Authrequest , res: Response) => {
     const { email, password } = req.body;
-    let userid = 1 
+    
+    const userid = req.userid
+    const check = signinschema.safeParse({
+         email,
+         password
+    })
+    if(!check.success){
+         "message": "feild not satisfied"
+    }
     const token = jwt.sign({userid }, JWT_SECRET )
     if ( !token){
           return res.status(400).json(
@@ -17,7 +27,8 @@ export const signin = (req: Request, res: Response) => {
     }
     else{
          res.status( 200).json({
-            "message":"you are signin"
+            "token": token ,
+            "success":true
          })
     }
 
