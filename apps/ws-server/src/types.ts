@@ -1,7 +1,7 @@
  import type { JwtPayload } from "jsonwebtoken";
  import type { WebSocket } from "ws";
  export interface webuser extends WebSocket{
-    user:String
+    userid:String
 }
  export interface MyUserPayload extends JwtPayload {
   id: string;
@@ -39,6 +39,10 @@ interface TextElement extends BaseElement {
 interface PencilElement extends BaseElement {
   type: 'pencil';
   points: { x: number; y: number }[];
+}
+export interface CursorMovePayload {
+  x: number;
+  y: number;
 }
 
 export type WhiteboardElement = RectangleElement | TextElement | PencilElement;
