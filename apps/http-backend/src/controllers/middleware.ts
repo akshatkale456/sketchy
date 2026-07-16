@@ -1,9 +1,9 @@
 import jwt from 'jsonwebtoken'
 
 import type { Response, NextFunction}from 'express'
-import type { AuthRequest } from '../types/types.js'
+import type { Authrequest } from '../types/types.js'
 const JWT_SECRET = "2211"
-const middleware = (req:AuthRequest,res:Response,next:NextFunction)=>{
+const middleware = (req:Authrequest,res:Response,next:NextFunction)=>{
      
     const token = req.headers.authorization
     if(!token){
