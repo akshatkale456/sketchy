@@ -22,7 +22,7 @@ import type { MyUserPayload, webuser } from './types';
     }
     wss.handleUpgrade(request,socket,head,(ws)=>{
    const myWs =  ws as webuser
-      myWs.user = decode.id
+      myWs.userid = decode.id
        wss.emit('connection',myWs,request)
 
 

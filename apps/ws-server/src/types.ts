@@ -44,5 +44,10 @@ export interface CursorMovePayload {
   x: number;
   y: number;
 }
+export interface joinroom {
+   type: 'JOIN_ROOM'
+  roomname : string
+  token : string
+}
 
 export type WhiteboardElement = RectangleElement | TextElement | PencilElement;
