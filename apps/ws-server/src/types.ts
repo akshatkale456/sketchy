@@ -2,6 +2,7 @@
  import type { WebSocket } from "ws";
  export interface webuser extends WebSocket{
     userid:String
+    roomname:string
 }
  export interface MyUserPayload extends JwtPayload {
   id: string;

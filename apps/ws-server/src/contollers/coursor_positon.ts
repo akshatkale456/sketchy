@@ -1,15 +1,19 @@
 import { webuser, CursorMovePayload } from "../types";
-
-
+import { rooms } from "../store";
 
 export const handleCursorMove = (ws: webuser, payload: CursorMovePayload) => {
-  
-  // Package it up for the rest of the room
   const broadcastMessage = JSON.stringify({
     type: 'CURSOR_MOVE',
-    userId: ws.userid, // The backend securely injects the ID here!
-    payload: payload   // This is just { x: 100, y: 250 }
+    userId: ws.userid, 
+    payload: payload   
   });
 
-  // ... broadcast loop logic ...
+  const currentroom = rooms.get(ws.roomname);
+  if (currentroom) {
+      currentroom.forEach((element) => {
+          if (element.readyState === 1 && element !== ws) {
+              element.send(broadcastMessage);
+          }
+      });
+  }
 };
