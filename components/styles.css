@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@source "../app";
+@source "../components";
+
+@theme {
+  --font-sans: var(--font-kalam), ui-sans-serif, system-ui, sans-serif;
+}

@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* UI Kit Variables */
+  --bg-base: #FDFBF7;        /* Sketchpad White */
+  --bg-surface: #FFF9E6;     /* Sticky Note */
+  --text-primary: #2C2D2F;   /* Graphite */
+  --text-muted: #71717A;     /* Smudged Pencil */
+  --border-default: #18181B; /* Heavy Ink */
+  
+  --color-primary: #D4FF32;  /* Highlighter Yellow */
+  --color-secondary: #5AB9EA;/* Blueprint Blue */
+  --color-success: #4ADE80;  /* Mint Marker */
+  --color-error: #FF6B6B;    /* Eraser Pink */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  /* Extend tailwind colors to use our semantic colors */
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-success: var(--color-success);
+  --color-error: var(--color-error);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Custom UI Kit Utilities */
+@utility bg-base {
+  background-color: var(--bg-base);
+}
+
+@utility bg-surface {
+  background-color: var(--bg-surface);
+}
+
+@utility text-primary {
+  color: var(--text-primary);
+}
+
+@utility text-muted {
+  color: var(--text-muted);
+}
+
+@utility border-default {
+  border-color: var(--border-default);
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-base);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
