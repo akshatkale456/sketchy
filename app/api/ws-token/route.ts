@@ -1,19 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/auth";
 import jwt from "jsonwebtoken";
 
 const JWT_SECRET = "2211"; 
 
 export async function GET(req: NextRequest) {
   try {
-    const session = await auth();
-
-    if (!session || !session.user || !session.user.id) {
-      return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
-    }
-
+    // TODO: Implement custom auth here
+    const userId = "placeholder-user-id";
     
-    const token = jwt.sign({ id: session.user.id }, JWT_SECRET, {
+    const token = jwt.sign({ id: userId }, JWT_SECRET, {
       expiresIn: "5m", 
     });
 

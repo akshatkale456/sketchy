@@ -50,14 +50,7 @@ export default function Home() {
         </p>
         
         {}
-        <motion.div 
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute bottom-10 flex flex-col items-center text-muted font-bold"
-        >
-          <span>Scroll down</span>
-          <span className="text-2xl mt-2">↓</span>
-        </motion.div>
+
       </section>
 
       {}
