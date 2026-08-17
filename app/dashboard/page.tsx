@@ -27,14 +27,14 @@ export default function Dashboard() {
   };
 
   const handleCreate = () => {
-    // Generate a random room ID
+    
     const newRoomId = Math.random().toString(36).substring(2, 9);
     router.push(`/board/${newRoomId}`);
   };
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans p-6 md:p-12 relative overflow-hidden">
-      {/* Background decoration */}
+      {}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40 -z-10">
         <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-blue-100 rounded-full blur-3xl"></div>
         <div className="absolute bottom-[-10%] left-[-5%] w-[30%] h-[30%] bg-purple-100 rounded-full blur-3xl"></div>
@@ -42,7 +42,7 @@ export default function Dashboard() {
 
       <div className="max-w-5xl mx-auto space-y-12 mt-8">
         
-        {/* Header */}
+        {}
         <header className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
             <h1 className="text-3xl md:text-4xl font-extrabold text-[#0f172a] tracking-tight">
@@ -63,7 +63,7 @@ export default function Dashboard() {
 
         <main className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
-          {/* Left Column: Actions */}
+          {}
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-white p-8 rounded-[2rem] shadow-xl border border-slate-100 relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-[4rem] -z-10 opacity-50 transition-transform group-hover:scale-110"></div>
@@ -102,7 +102,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* Right Column: Active Rooms */}
+          {}
           <div className="lg:col-span-7">
             <div className="bg-white p-8 rounded-[2rem] shadow-xl border border-slate-100 h-full flex flex-col">
               <div className="flex items-center justify-between mb-8">

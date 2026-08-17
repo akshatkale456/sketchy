@@ -17,7 +17,7 @@ export function WebSocketProvider({ children }: { children: React.ReactNode }) {
   } = useBoardStore();
 
   useEffect(() => {
-    // Exclude websocket connection on signin and signup routes
+    
     if (pathname === '/signin' || pathname === '/signup' || pathname === '/api/auth/signin' || pathname === '/api/auth/signup') {
       return;
     }
@@ -37,7 +37,7 @@ export function WebSocketProvider({ children }: { children: React.ReactNode }) {
         ws = new WebSocket(`ws://localhost:8080?token=${data.token}`);
         wsRef.current = ws;
 
-        // Provide the send function to the global store
+        
         setSendMsg((msg: any) => {
           if (ws?.readyState === WebSocket.OPEN) {
             ws.send(JSON.stringify(msg));

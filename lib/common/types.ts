@@ -6,7 +6,7 @@
 }
  export interface MyUserPayload extends JwtPayload {
   id: string;
-  email: string; // Add any other fields you encode
+  email: string; 
 }
 export interface clientmessage {
      type :string,

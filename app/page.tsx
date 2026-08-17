@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="bg-base font-sans text-primary selection:bg-primary selection:text-default">
       
-      {/* Header/Nav */}
+      {}
       <header className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center z-50">
         <div className="flex-1">
           <h1 className="text-2xl font-black tracking-tight text-primary">
@@ -40,7 +40,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section */}
+      {}
       <section className="min-h-screen flex flex-col items-center justify-center px-4 relative pt-20">
         <h2 className="text-6xl md:text-8xl font-black text-primary mb-6 text-center tracking-tight leading-[1.1] max-w-4xl">
           Where ideas take shape.
@@ -49,7 +49,7 @@ export default function Home() {
           A collaborative whiteboard for teams who think better together.
         </p>
         
-        {/* Scroll indicator */}
+        {}
         <motion.div 
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
@@ -60,7 +60,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Interactive Whiteboard Section */}
+      {}
       <section className="min-h-screen relative flex flex-col items-center justify-center bg-surface border-t-4 border-default overflow-hidden py-20 px-4">
         
         <div className="text-center mb-12 z-20">
@@ -68,9 +68,9 @@ export default function Home() {
           <p className="text-lg text-muted font-bold mt-4">Select a tool and start sketching on the board below.</p>
         </div>
 
-        {/* Floating Elements (Background) */}
+        {}
         
-        {/* Floating Mini Pencil */}
+        {}
         <motion.div 
           animate={{ y: [-15, 15, -15], rotate: [-10, 10, -10] }}
           transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
@@ -79,7 +79,7 @@ export default function Home() {
           ✏️
         </motion.div>
 
-        {/* Floating Mini Rubber/Eraser */}
+        {}
         <motion.div 
           animate={{ y: [15, -15, 15], rotate: [10, -10, 10] }}
           transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 1 }}
@@ -88,7 +88,7 @@ export default function Home() {
           🧽
         </motion.div>
 
-        {/* Floating Mini Palette */}
+        {}
         <motion.div 
           animate={{ x: [-10, 10, -10], rotate: [-5, 15, -5] }}
           transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 2 }}
@@ -97,7 +97,7 @@ export default function Home() {
           🎨
         </motion.div>
 
-        {/* Floating Mini Ruler */}
+        {}
         <motion.div 
           animate={{ x: [10, -10, 10], rotate: [20, 0, 20] }}
           transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 1.5 }}
@@ -106,7 +106,7 @@ export default function Home() {
           📏
         </motion.div>
 
-        {/* Floating Mini Compass */}
+        {}
         <motion.div 
           animate={{ y: [-10, 10, -10], rotate: [-15, 5, -15] }}
           transition={{ repeat: Infinity, duration: 6.5, ease: "easeInOut", delay: 0.5 }}
@@ -115,7 +115,7 @@ export default function Home() {
           🧭
         </motion.div>
 
-        {/* Floating Mini Scissors */}
+        {}
         <motion.div 
           animate={{ y: [10, -10, 10], rotate: [5, -15, 5] }}
           transition={{ repeat: Infinity, duration: 7.5, ease: "easeInOut", delay: 3 }}
@@ -124,7 +124,7 @@ export default function Home() {
           ✂️
         </motion.div>
 
-        {/* Floating Squiggly Lines */}
+        {}
         <motion.svg 
           animate={{ x: [-10, 10, -10], rotate: [0, 5, 0] }}
           transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" }}
@@ -143,19 +143,19 @@ export default function Home() {
           <path d="M10,80 Q30,20 60,60 T90,20" />
         </motion.svg>
 
-        {/* The Whiteboard App Container (Decreased Size) */}
+        {}
         <div className="relative w-full max-w-4xl h-[450px] bg-white border-4 border-default rounded-3xl shadow-[16px_16px_0px_0px_rgba(24,24,27,1)] flex flex-col z-10 overflow-hidden">
           
-          {/* Mock Browser Header & Toolbar */}
+          {}
           <div className="h-16 border-b-4 border-default bg-base flex items-center justify-between px-6 z-20 shrink-0">
-            {/* Mock Window Dots */}
+            {}
             <div className="flex gap-2">
               <div className="w-4 h-4 rounded-full border-2 border-default bg-error" />
               <div className="w-4 h-4 rounded-full border-2 border-default bg-primary" />
               <div className="w-4 h-4 rounded-full border-2 border-default bg-success" />
             </div>
 
-            {/* Actual Toolbar */}
+            {}
             <div className="flex gap-2 p-1 bg-white rounded-xl border-2 border-default">
               <button 
                 className={`px-3 py-1 font-bold rounded-lg border-2 ${activeTool === 'PENCIL' ? 'bg-primary border-default shadow-[2px_2px_0px_0px_rgba(24,24,27,1)]' : 'border-transparent text-muted hover:bg-surface'}`} 
@@ -178,7 +178,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* The Canvas Area */}
+          {}
           <div className="flex-1 relative cursor-crosshair overflow-hidden">
             <div className="absolute top-0 left-0">
               <Canvas sendMsg={sendMsg} />
@@ -188,10 +188,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Voice Call Feature Section */}
+      {}
       <section className="min-h-screen relative flex flex-col md:flex-row items-center justify-center bg-primary border-t-4 border-default overflow-hidden py-20 px-4 md:px-20 gap-16">
         
-        {/* Text Content */}
+        {}
         <div className="flex-1 max-w-xl z-10">
           <h3 className="text-5xl md:text-7xl font-black text-primary mb-6 tracking-tight leading-[1.1]">
             Talk while you sketch.
@@ -206,9 +206,9 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Visual / Animation Showcase */}
+        {}
         <div className="flex-1 flex justify-center items-center z-10 relative w-full">
-          {/* Main Voice Call Card */}
+          {}
           <div className="w-full max-w-md bg-base border-4 border-default rounded-3xl shadow-[16px_16px_0px_0px_rgba(24,24,27,1)] p-8 relative z-10">
             
             <div className="flex justify-between items-center mb-8 border-b-4 border-default pb-4">
@@ -220,13 +220,13 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-2 gap-8">
-              {/* Avatar 1 (Talking) */}
+              {}
               <div className="flex flex-col items-center gap-3">
                 <div className="relative">
                   <div className="w-24 h-24 bg-secondary border-4 border-default rounded-full flex items-center justify-center text-4xl shadow-[6px_6px_0px_0px_rgba(24,24,27,1)]">
                     👩‍🎨
                   </div>
-                  {/* Pulsing Mic Indicator */}
+                  {}
                   <motion.div 
                     animate={{ scale: [1, 1.2, 1] }} 
                     transition={{ repeat: Infinity, duration: 1.5 }}
@@ -238,7 +238,7 @@ export default function Home() {
                 <span className="font-black text-xl text-primary">Alex</span>
               </div>
 
-              {/* Avatar 2 (Listening) */}
+              {}
               <div className="flex flex-col items-center gap-3">
                 <div className="w-24 h-24 bg-error border-4 border-default rounded-full flex items-center justify-center text-4xl shadow-[6px_6px_0px_0px_rgba(24,24,27,1)]">
                   👨‍💻
@@ -246,7 +246,7 @@ export default function Home() {
                 <span className="font-bold text-xl text-primary opacity-80">Sam</span>
               </div>
               
-              {/* Avatar 3 (Listening) */}
+              {}
               <div className="flex flex-col items-center gap-3">
                 <div className="w-24 h-24 bg-surface border-4 border-default rounded-full flex items-center justify-center text-4xl shadow-[6px_6px_0px_0px_rgba(24,24,27,1)]">
                   🧑‍🚀
@@ -254,7 +254,7 @@ export default function Home() {
                 <span className="font-bold text-xl text-primary opacity-80">Jordan</span>
               </div>
 
-              {/* Add user button */}
+              {}
               <div className="flex flex-col items-center justify-center gap-3">
                 <div className="w-24 h-24 bg-white border-4 border-default border-dashed rounded-full flex items-center justify-center text-4xl text-muted cursor-pointer hover:bg-surface transition-colors hover:scale-105">
                   +
@@ -265,7 +265,7 @@ export default function Home() {
             
           </div>
           
-          {/* Decorative spinning dashed circle */}
+          {}
           <motion.svg 
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 30, ease: "linear" }}

@@ -1,4 +1,4 @@
-// components/WhiteboardCanvas.tsx
+
 "use client";
 
 import { useRef, useEffect, useState } from 'react';
@@ -50,14 +50,14 @@ export default function WhiteboardCanvas({ sendMsg }: { sendMsg: (msg: any) => v
     const stage = e.target.getStage();
     const { x, y } = getRelativePointerPosition(stage);
 
-    // 1. Broadcast Cursor
+    
     const now = Date.now();
     if (now - lastCursorSend.current > 50) {
       lastCursorSend.current = now;
       sendMsg({ type: 'CURSOR_MOVE', x, y });
     }
 
-    // 2. Draw & Broadcast Shape
+    
     if (isDrawing.current && activeTool !== 'HAND' && activeTool !== 'ERASER') {
       updateDrawing(x, y);
 

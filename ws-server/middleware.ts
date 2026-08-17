@@ -11,12 +11,12 @@ import { route } from './contollers/route';
  wss.on('connection', (ws: webuser, request) => {
   console.log(`User ${ws.userid} connected!`);
 
-  // 3. The Front Door for messages
+  
   ws.on('message', (rawBuffer) => {
-    // Convert binary buffer to string
+    
     const rawString = rawBuffer.toString();
     
-    // Hand the authenticated socket and string to your Mailroom Clerk
+    
     route(ws, rawString);
   });
 

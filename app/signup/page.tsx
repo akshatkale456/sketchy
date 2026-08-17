@@ -18,18 +18,18 @@ export default function Signup() {
     const password = passwordRef.current?.value;
     
     console.log("Signup Data:", { name, email, password });
-    // TODO: implement actual sign-up logic
+    
   };
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col justify-center items-center relative overflow-hidden font-sans">
-      {/* Background abstract shapes (optional to match image vibe) */}
+      {}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
         <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-blue-100 rounded-full blur-3xl"></div>
         <div className="absolute top-[20%] -right-[10%] w-[40%] h-[50%] bg-blue-50 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Floating badges from screenshot */}
+      {}
       <div className="absolute top-[10%] left-1/2 transform -translate-x-1/2">
         <Badge variant="outline" className="bg-white px-3 py-1 text-xs text-slate-500 rounded-full font-medium shadow-sm gap-2 uppercase tracking-wide border-slate-100">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span>
@@ -51,7 +51,7 @@ export default function Signup() {
         </Badge>
       </div>
 
-      {/* Card */}
+      {}
       <div className="bg-white p-10 rounded-3xl shadow-xl w-full max-w-[440px] z-10 border border-slate-100">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-extrabold text-slate-900 mb-3 tracking-tight">

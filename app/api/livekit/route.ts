@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: 'Missing "room" query parameter' }, { status: 400 });
   }
 
-  // Use environment variables or placeholders if not set
+  
   const apiKey = process.env.LIVEKIT_API_KEY || "devkey";
   const apiSecret = process.env.LIVEKIT_API_SECRET || "secret";
   const wsUrl = process.env.NEXT_PUBLIC_LIVEKIT_URL || "wss://your-project.livekit.cloud";
@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
   try {
     const at = new AccessToken(apiKey, apiSecret, {
       identity: username,
-      // name: username, // Optional
+      
     });
 
     at.addGrant({ roomJoin: true, room: room });

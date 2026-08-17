@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
-import { signinschema } from '@/lib/common/schematypes'; // was @repo/common/types
+import { signinschema } from '@/lib/common/schematypes'; 
 
-const JWT_SECRET = "2211"; // Should ideally be in .env
+const JWT_SECRET = "2211"; 
 
 export async function POST(req: NextRequest) {
     try {
@@ -14,8 +14,8 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ message: "field not satisfied" }, { status: 400 });
         }
         
-        // TODO: Implement actual user signin DB logic here, get userid
-        const userid = 1; // Mock userid
+        
+        const userid = 1; 
 
         const token = jwt.sign({ userid }, JWT_SECRET);
         if (!token) {

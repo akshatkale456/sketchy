@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/auth";
 import jwt from "jsonwebtoken";
 
-const JWT_SECRET = "2211"; // Should ideally be in .env
+const JWT_SECRET = "2211"; 
 
 export async function GET(req: NextRequest) {
   try {
@@ -12,9 +12,9 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
     }
 
-    // Issue a short-lived token for WebSocket server
+    
     const token = jwt.sign({ id: session.user.id }, JWT_SECRET, {
-      expiresIn: "5m", // Valid for 5 minutes
+      expiresIn: "5m", 
     });
 
     return NextResponse.json({ token, success: true }, { status: 200 });

@@ -1,4 +1,4 @@
-// app/page.tsx
+
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
@@ -50,7 +50,7 @@ export default function BoardPage() {
       className="relative w-screen h-screen overflow-hidden bg-[#f0f0f0]"
     >
       
-      {/* THE TOOLBAR */}
+      {}
       <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50 flex gap-2 p-2 bg-white rounded-lg shadow-xl border">
         <button className={getButtonClass('HAND')} onClick={() => setActiveTool('HAND')}>🖐️ Pan</button>
         <button className={getButtonClass('PENCIL')} onClick={() => setActiveTool('PENCIL')}>✏️ Pen</button>
@@ -58,12 +58,12 @@ export default function BoardPage() {
         <button className={getButtonClass('ERASER')} onClick={() => setActiveTool('ERASER')}>🧽 Eraser</button>
       </div>
 
-      {/* THE CANVAS */}
+      {}
       <div className="absolute inset-0 z-0">
         <Canvas sendMsg={sendMsg} />
       </div>
 
-      {/* LIVEKIT VIDEO CONFERENCE OVERLAY */}
+      {}
       <div className="absolute bottom-4 right-4 w-96 h-96 z-40 bg-black rounded-xl overflow-hidden shadow-2xl">
         <VideoConference />
         <RoomAudioRenderer />

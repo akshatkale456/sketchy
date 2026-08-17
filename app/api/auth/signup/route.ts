@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { signupschema } from '@/lib/common/schematypes'; // was @repo/common/types
+import { signupschema } from '@/lib/common/schematypes'; 
 
 export async function POST(req: NextRequest) {
     try {
@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ message: "field not satisfied" }, { status: 400 });
         }
         
-        // TODO: Implement user signup logic here (e.g. validate body, hash password, save to DB)
+        
         
         return NextResponse.json({ message: "Signup endpoint" }, { status: 200 });
     } catch (error) {

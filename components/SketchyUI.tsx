@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Common tailwind classes for the sketchy look
+
 const sketchyBorderShadow = "border-2 border-black rounded-md shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]";
 const sketchyBorderHover = "hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all";
 
@@ -29,10 +29,10 @@ export const SketchButton = ({
   let textClass = "text-black";
 
   if (variant === 'primary') {
-    bgClass = "bg-[#fd6c64]"; // red/coral from the sketch
+    bgClass = "bg-[#fd6c64]"; 
     textClass = "text-white";
   } else if (variant === 'secondary') {
-    bgClass = "bg-[#c3e4d9]"; // light green/blue from the sketch
+    bgClass = "bg-[#c3e4d9]"; 
   } else if (variant === 'outline') {
     bgClass = active ? "bg-[#c3e4d9]" : "bg-transparent";
   }

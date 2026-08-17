@@ -1,28 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  /* UI Kit Variables */
-  --bg-base: #FDFBF7;        /* Sketchpad White */
-  --bg-surface: #FFF9E6;     /* Sticky Note */
-  --text-primary: #2C2D2F;   /* Graphite */
-  --text-muted: #71717A;     /* Smudged Pencil */
-  --border-default: #18181B; /* Heavy Ink */
   
-  --color-primary: #D4FF32;  /* Highlighter Yellow */
-  --color-secondary: #5AB9EA;/* Blueprint Blue */
-  --color-success: #4ADE80;  /* Mint Marker */
-  --color-error: #FF6B6B;    /* Eraser Pink */
+  --bg-base: #FDFBF7;        
+  --bg-surface: #FFF9E6;     
+  --text-primary: #2C2D2F;   
+  --text-muted: #71717A;     
+  --border-default: #18181B; 
+  
+  --color-primary: #D4FF32;  
+  --color-secondary: #5AB9EA;
+  --color-success: #4ADE80;  
+  --color-error: #FF6B6B;    
 }
 
 @theme {
-  /* Extend tailwind colors to use our semantic colors */
+  
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
   --color-success: var(--color-success);
   --color-error: var(--color-error);
 }
 
-/* Custom UI Kit Utilities */
+
 @utility bg-base {
   background-color: var(--bg-base);
 }
