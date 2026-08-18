@@ -5,6 +5,8 @@ import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { useBoardStore } from '@/store/useBoardStore';
 import { Tool } from '@/lib/common/types';
+import { ChatBox } from '@/components/ChatBox';
+import { Hand, Pencil, Square, Eraser } from 'lucide-react';
 
 const Canvas = dynamic(() => import('@/components/WhiteboardCanvas'), { ssr: false });
 
@@ -19,16 +21,26 @@ export default function BoardPage() {
       
       {}
       <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50 flex gap-2 p-2 bg-white rounded-lg shadow-xl border">
-        <button className={getButtonClass('HAND')} onClick={() => setActiveTool('HAND')}>🖐️ Pan</button>
-        <button className={getButtonClass('PENCIL')} onClick={() => setActiveTool('PENCIL')}>✏️ Pen</button>
-        <button className={getButtonClass('RECTANGLE')} onClick={() => setActiveTool('RECTANGLE')}>⬜ Rect</button>
-        <button className={getButtonClass('ERASER')} onClick={() => setActiveTool('ERASER')}>🧽 Eraser</button>
+        <button className={getButtonClass('HAND')} onClick={() => setActiveTool('HAND')}>
+          <Hand size={18} className="mr-2 inline" /> Pan
+        </button>
+        <button className={getButtonClass('PENCIL')} onClick={() => setActiveTool('PENCIL')}>
+          <Pencil size={18} className="mr-2 inline" /> Pen
+        </button>
+        <button className={getButtonClass('RECTANGLE')} onClick={() => setActiveTool('RECTANGLE')}>
+          <Square size={18} className="mr-2 inline" /> Rect
+        </button>
+        <button className={getButtonClass('ERASER')} onClick={() => setActiveTool('ERASER')}>
+          <Eraser size={18} className="mr-2 inline" /> Eraser
+        </button>
       </div>
 
       {}
       <div className="absolute inset-0 z-0">
         <Canvas sendMsg={sendMsg} />
       </div>
+
+      <ChatBox />
 
     </div>
   );

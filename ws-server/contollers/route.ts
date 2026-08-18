@@ -1,8 +1,9 @@
-import { clientmessage, routetype, webuser } from \"../../lib/common/types\";
+import { clientmessage, routetype, webuser } from "../../lib/common/types";
 import { JOIN } from "./join_room";
 import { DRAW_SHAPE } from "./drawshape";
 import { REMOVE_SHAPE } from "./remove_shape";
 import { handleCursorMove } from "./coursor_positon";
+import { CHAT } from "./chat";
 
 export const route = (ws: webuser, rawmessage: clientmessage | string | Buffer) => {
     try {
@@ -20,6 +21,9 @@ export const route = (ws: webuser, rawmessage: clientmessage | string | Buffer) 
                 break;
             case routetype.CURSOR_POSITION:
                 handleCursorMove(ws, parsedata.payload);
+                break;
+            case routetype.CHAT_MESSAGE:
+                CHAT(ws, parsedata.payload);
                 break;
             default:
                 console.warn("Unknown message type:", parsedata.type);

@@ -31,6 +31,10 @@ interface BoardState {
   
   sendMsg: (msg: any) => void;
   setSendMsg: (fn: (msg: any) => void) => void;
+
+  // Chat
+  messages: Array<{ id: string, text: string, senderId: string, timestamp: string }>;
+  addMessage: (message: { id: string, text: string, senderId: string, timestamp: string }) => void;
 }
 
 export const useBoardStore = create<BoardState>((set) => ({
@@ -132,4 +136,9 @@ export const useBoardStore = create<BoardState>((set) => ({
 
   sendMsg: (msg) => { console.warn("sendMsg called before WebSocket was connected") },
   setSendMsg: (fn) => set({ sendMsg: fn }),
+
+  messages: [],
+  addMessage: (message) => set((state) => ({
+    messages: [...state.messages, message]
+  })),
 }));

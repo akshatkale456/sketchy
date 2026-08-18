@@ -16,9 +16,8 @@ export interface clientmessage {
      JOIN_ROOM = 'JOIN_ROOM',
      DRAW_SHAPE = 'DRAW_SHAPE',
      REMOVE_SHAPE = 'REMOVE_SHAPE',
-     CURSOR_POSITION = 'CURSOR_POSITION'
-
-
+     CURSOR_POSITION = 'CURSOR_POSITION',
+     CHAT_MESSAGE = 'CHAT_MESSAGE'
 } 
 export interface BaseElement {
   id: string;
@@ -58,6 +57,13 @@ export interface joinroom {
    type: 'JOIN_ROOM'
   roomname : string
   token : string
+}
+
+export interface chatmessage {
+  type: 'CHAT_MESSAGE';
+  roomname: string;
+  message: string;
+  token?: string;
 }
 
 export type WhiteboardElement = RectangleElement | TextElement | PencilElement;

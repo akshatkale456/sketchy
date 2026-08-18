@@ -13,7 +13,8 @@ export function WebSocketProvider({ children }: { children: React.ReactNode }) {
     deleteElement, 
     updateCursor, 
     removeCursor, 
-    setSendMsg 
+    setSendMsg,
+    addMessage
   } = useBoardStore();
 
   useEffect(() => {
@@ -59,6 +60,14 @@ export function WebSocketProvider({ children }: { children: React.ReactNode }) {
             else if (message.type === 'USER_LEFT') {
               removeCursor(message.userId);
             }
+            else if (message.type === 'CHAT_MESSAGE') {
+              addMessage({
+                id: Math.random().toString(36).substring(7),
+                text: message.payload.message,
+                senderId: message.payload.senderId,
+                timestamp: message.payload.timestamp
+              });
+            }
           } catch (e) {
             console.error("Error parsing WS message", e);
           }
@@ -76,7 +85,7 @@ export function WebSocketProvider({ children }: { children: React.ReactNode }) {
         ws.close();
       }
     };
-  }, [pathname, updateFromNetwork, deleteElement, updateCursor, removeCursor, setSendMsg]);
+  }, [pathname, updateFromNetwork, deleteElement, updateCursor, removeCursor, setSendMsg, addMessage]);
 
   return <>{children}</>;
 }
